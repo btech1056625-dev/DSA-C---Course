@@ -15,7 +15,8 @@ int main(){
 
     
 
-    // source code(.c)---> pre processor(.i)---> compiling(.s)---> assembling(.o)---> linking(.out)---> loading---> execution
+    // source code(.c)---> pre processor(.i)---> compiling(.s)---> assembling(.o)--->
+    // linking(.out)---> loading---> execution
     // cpp: C Pre Processor
 
 
