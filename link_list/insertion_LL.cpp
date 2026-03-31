@@ -67,8 +67,6 @@ node* insert_kth(node* head, int k, int val){
         }
         temp= new node(val , temp);
         prev->next= temp;
-        
-        //
         temp = temp->next;
         return temp ;
     }
@@ -144,11 +142,6 @@ int main(){
         
         
     }
-    
-    
-    
-    
-    
 
 
     return 0;
