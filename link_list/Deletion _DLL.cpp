@@ -56,11 +56,11 @@ node* delete_tail(node* head){
         temp = temp->next;
     }
 
-        node* t = temp->next;
-        t->prev = NULL;
-        temp->next = NULL;
-        delete t;
-        return head;
+    node* t = temp->next;
+    t->prev = NULL;
+    temp->next = NULL;
+    delete t;
+    return head;
 }
 
 node* delete_kth(node* head, int k){
@@ -72,6 +72,7 @@ node* delete_kth(node* head, int k){
     node* a = temp->next;
     node* t = temp->next->next;
     temp->next = temp->next->next;
+    t->prev = temp;
     a->prev = NULL;
     a->next = NULL;
     delete a;
@@ -88,6 +89,7 @@ node* delete_val(node* head , int val){
     node* a = temp->next;
     node* t = temp->next->next;
     temp->next = temp->next->next;
+    t->prev = temp;
     a->prev = NULL;
     a->next = NULL;
     delete a;
