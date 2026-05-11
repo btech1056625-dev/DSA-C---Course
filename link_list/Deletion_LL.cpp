@@ -108,7 +108,7 @@ node* delete_val(node* head, int val){
 int main(){
     vector<int> v = {10 , 12, 16 , 20, 24, 28, 30};
     node* head = conversion(v);
-    cout<<"Head before deletion:"<<head->data;
+    /*cout<<"Head before deletion:"<<head->data;
     cout<<endl;
     node* temp = head;
 
@@ -123,14 +123,15 @@ int main(){
     {
         cout<<temp->data<<" ";
         temp = temp->next;
-    }
+    }*/
     int k;
     cout<<"Enter the kth element:";
     cin>>k;
     
     head = delete_k(head, k);
 
-    temp = head;
+
+    node* temp = head;
 
     while (temp)
     {
@@ -138,7 +139,7 @@ int main(){
         temp= temp->next;
     }
 
-    int val;
+    /*int val;
     cout<<"Enter the value:";
     cin>>val;
     temp = head;
@@ -148,11 +149,6 @@ int main(){
     {
         cout<<temp->data<<" ";
         temp = temp->next;
-    }
-    
-
-
-
-
+    }*/
     return 0;
 }

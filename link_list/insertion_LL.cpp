@@ -45,9 +45,11 @@ node* insert_tail( node* head, int val){
         temp = temp->next;
         
     }
-    temp = temp->next;
-    node* t = new node(val , temp);
-    return t;
+    //temp = temp->next;
+    node* t = new node(val);
+    temp->next = t;
+    t->next  = nullptr;
+    return head;
 }
 
 node* insert_kth(node* head, int k, int val){
@@ -85,15 +87,15 @@ int main(){
     cin>>val;
     
     //head = insert_head(head, val);
-    //head = insert_tail(head , val);    
+    head = insert_tail(head , val);    
 
 
-    /*node* temp = head;
+    node* temp = head;
     while (temp)
     {
         cout<<temp->data<<" ";
         temp = temp->next;
-    }*/
+    }
     /*node* temp = head ;
     while (temp->next!= NULL)
     {   
@@ -109,7 +111,7 @@ int main(){
         t = t->next;
     }*/
     
-    int k;
+    /*int k;
     cout<<"Enter the kth position:";
     cin>>k;
 
@@ -141,7 +143,7 @@ int main(){
         }
         
         
-    }
+    }*/
 
 
     return 0;
