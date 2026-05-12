@@ -33,45 +33,41 @@ node* conversion( vector<int> &arr){
     
 }
 
-node* reverse(node* head , int n){
-    if(head==NULL || head->next==NULL){
-        return head;
-    }
-
-    node* t1 = head;
-    node* t2 = head;
-    int t = n/2;
-    int j=0;
-    while (t--)
-    {   
-        for (int i = 1; i < n-j; i++)
+void reverse(node* temp , node* front , node* prev){
+    if(temp == NULL){
+        node* t = prev;
+        while (t)
         {
-            t2 = t2->next;
+            cout<<t->data<<" ";
+            t = t->next;
         }
-        swap((t1->data) , (t2->data));
-        t2 = head;
-        t1 = t1->next;
-        j++;
         
+        return;
     }
-    return head;
-    
+    front = temp->next;
+    temp->next = prev;
+    prev = temp;
+    temp = front ;
+    reverse(temp , front , prev);
 }
 
 
 int main(){
-
-    vector<int> arr = {1,3,2,5,0};
+    vector<int> arr = {1,3,4,5,0};
     node* head;
     head = conversion(arr);
-    head = reverse(head, arr.size());
+    node* temp = head;
+    node* prev = NULL;
+    node* front = temp->next;
+    reverse(temp, front, prev);
 
-    node* temp = head ;
-    while(temp){
-        cout<<temp->data<<" ";
-        temp = temp->next;
-    }
-
+    /*node* t = prev;
+    while (t)
+    {
+        cout<<t->data<<" ";
+        t = t->next;
+    }*/
+    
 
     return 0;
-} 
+}
