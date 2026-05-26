@@ -8,24 +8,30 @@ int lowerbound(vector<int> &v , int x){
     int e = v.size()-1;
     int mid = s+(e-s)/2;
 
-    int min = -1;
     while(s<=e){
-        if(v[mid] >= x){
-            if(min == -1){
-                min = mid;
+        if(v[mid] == x){
+            int ans = mid;
+            while (true)
+            {
+                if (v[ans-1] == x)
+                {
+                    ans--;
+                }
+                else{
+                    return ans;
+                }
             }
-            else if(min > mid){
-                min = mid;
-            }
-            s = mid+1;
+            
         }
-
         else if(v[mid] < x){
             s = mid+1;
         }
+        else{
+            e = mid-1;
+        }
         mid = s+(e-s)/2;
     }
-    return mid;
+    
 }
 
 
